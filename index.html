@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baby Shower de Isabella</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="stars" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<p id="demo" class="demo" hidden>Modo de prueba: el resultado es simulado. En la Fase 2 lo decidirá el servidor.</p>
+
+<main>
+  <section class="hero card">
+    <svg class="art" viewBox="0 0 320 320" role="img" aria-label="Osito rodeado de flores">
+      <circle cx="160" cy="160" r="148" fill="#FFF6EA" stroke="#C9A66B" stroke-width="2"/>
+      <g fill="#F7D9DD" stroke="#E8A5B0" stroke-width="1.5">
+        <circle cx="60" cy="150" r="16"/><circle cx="72" cy="105" r="13"/><circle cx="100" cy="68" r="15"/>
+        <circle cx="260" cy="150" r="16"/><circle cx="248" cy="105" r="13"/><circle cx="220" cy="68" r="15"/>
+        <circle cx="75" cy="215" r="14"/><circle cx="245" cy="215" r="14"/>
+      </g>
+      <g fill="#C9A66B"><circle cx="60" cy="150" r="4"/><circle cx="72" cy="105" r="3.5"/><circle cx="100" cy="68" r="4"/><circle cx="260" cy="150" r="4"/><circle cx="248" cy="105" r="3.5"/><circle cx="220" cy="68" r="4"/><circle cx="75" cy="215" r="3.5"/><circle cx="245" cy="215" r="3.5"/></g>
+      <circle cx="115" cy="115" r="26" fill="#D9B28C"/><circle cx="205" cy="115" r="26" fill="#D9B28C"/>
+      <circle cx="115" cy="115" r="14" fill="#F2D4BC"/><circle cx="205" cy="115" r="14" fill="#F2D4BC"/>
+      <circle cx="160" cy="165" r="62" fill="#E3BE98"/>
+      <ellipse cx="160" cy="185" rx="26" ry="20" fill="#F7E3D0"/>
+      <ellipse cx="160" cy="176" rx="8" ry="6" fill="#6B4650"/>
+      <path d="M150 190q10 8 20 0" stroke="#6B4650" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M126 152q9-7 18 0M176 152q9-7 18 0" stroke="#6B4650" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <circle cx="128" cy="178" r="8" fill="#F2B8C2" opacity=".7"/><circle cx="192" cy="178" r="8" fill="#F2B8C2" opacity=".7"/>
+      <path d="M130 224q30 22 60 0l10 48h-80z" fill="#F7D9DD" stroke="#E8A5B0" stroke-width="1.5"/>
+      <path d="M160 40l4 9 10 1-8 7 3 10-9-6-9 6 3-10-8-7 10-1z" fill="#C9A66B"/>
+    </svg>
+    <h1>¡Estás invitado al Baby Shower de Isabella!</h1>
+    <p class="lead">Una pequeña estrella viene en camino y llenará nuestra vida de ternura. Queremos celebrar su llegada contigo.</p>
+    <p class="padres" id="padres"></p>
+    <div class="orn" aria-hidden="true">✦</div>
+    <button id="open-btn" class="btn">DESCUBRE TU REGALO</button>
+    <dl class="info">
+      <div><dt>Fecha</dt><dd id="ev-fecha"></dd></div>
+      <div><dt>Hora</dt><dd id="ev-hora"></dd></div>
+      <div><dt>Lugar</dt><dd id="ev-lugar"></dd></div>
+      <div><dt>Dirección</dt><dd id="ev-dir"></dd></div>
+    </dl>
+    <p id="ev-notas" class="notas" hidden></p>
+  </section>
+
+  <section id="roulette" class="roulette card" hidden>
+    <h2 id="hola">Tu regalo para Isabella</h2>
+    <div id="spin-zone">
+      <p class="lead">Gira la ruleta una sola vez y descubre qué llevarás.</p>
+      <div class="wheel-wrap">
+        <div class="pointer" aria-hidden="true"></div>
+        <canvas id="wheel" width="720" height="720" aria-label="Ruleta de regalos"></canvas>
+      </div>
+      <button id="spin-btn" class="btn">GIRAR LA RULETA</button>
+    </div>
+    <div id="result" class="result" hidden>
+      <p class="lead" id="res-msg"></p>
+      <p class="who" id="res-nombre"></p>
+      <p class="gift" id="res-regalo"></p>
+      <div class="actions">
+        <button id="dl-btn" class="btn ghost">Descargar imagen</button>
+      </div>
+      <div class="send">
+        <label for="wa-to">Enviar mi resultado a</label>
+        <select id="wa-to"></select>
+        <button id="wa-btn" class="btn">Enviar por WhatsApp</button>
+        <p class="hint">Se descargará tu imagen y se abrirá WhatsApp para que la adjuntes en el chat.</p>
+      </div>
+    </div>
+    <p id="err" class="err" role="alert"></p>
+  </section>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/roulette.js"></script>
+<script src="js/results.js"></script>
+<script src="js/invitation.js"></script>
+</body>
+</html>
